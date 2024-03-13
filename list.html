@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>list</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .content{
+      color: blue;
+      background: black;
+    }
+.container{
+  color:red;
+}
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="content">
+
+
+    <div>
+      <label style="color:red" for="first">Item</label>
+      <input type="text" id="first" name="first" style="width: 100px;">
+    </div>
+
+      <div>
+        <button id="button">Add item</button>
+
+      </div>
+
+
+    <div id="list">
+    </div>
+  </div>
+</div>
+<script>
+  const firstname = document.getElementById('first');
+  const helloButton = document.getElementById('button');
+  const list= document.getElementById('list');
+
+  helloButton.addEventListener('click',function (e){
+    let first = firstname.value;
+    let fullName = ` ${first}`;
+    let item = document.createElement('li');
+
+    item.innerText = fullName;
+
+    list.insertAdjacentElement('afterend',item);
+
+    item.addEventListener('click', function(e){
+      item.remove();
+    });
+  });
+
+
+
+
+</script>
+
+</body>
+</html>
